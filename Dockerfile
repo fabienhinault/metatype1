@@ -1,8 +1,8 @@
-# latest-full on 2023-08-10
-FROM texlive/texlive@sha256:a0c7fb23353b7fc0d9faeec4e31d1ba954fa4744cdec237b06e86ec93a132c65 AS texlive
+# latest-full on 2023-08-26
+FROM texlive/texlive@sha256:f3f3e87322a0fffd82821afd49fc4818a964b7b1246d4b6d8416eae99f3f2bec AS texlive
 
-RUN apt update && \
-apt install -y gawk && \
+RUN apt-get update && \
+apt-get install -y gawk && \ 
 curl --output metatype1-ver056.zip  https://ctan.gutenberg-asso.fr/fonts/utilities/metatype1/metatype1-ver056.zip && \
 unzip metatype1-ver056.zip
 
