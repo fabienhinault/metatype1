@@ -11,4 +11,4 @@ COPY ./Makefile /mt1
 WORKDIR /mt1
 
 # test the image on sample font
-RUN cp ./sample/tapes.mp ./ && make FONT=tapes
+RUN cp ./samples/tapes.mp ./ && make FONT=tapes
