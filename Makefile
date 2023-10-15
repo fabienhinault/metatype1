@@ -15,7 +15,7 @@ tfm: $(FONT).tfm
 	mpost "\generating:=0; \input $<"
 	gawk -f $(METATYPE1)/mp2pf.awk \
 		-vCD=$(METATYPE1)/pfcommon.dat \
-		-vNAME=‘basename $< .mp‘
+		-vNAME=$(basename $< .mp)
 
 %.pn: %.p
 	gawk -f $(METATYPE1)/packsubr.awk \
@@ -40,7 +40,7 @@ tfm: $(FONT).tfm
 	mpost $<
 	cp $< _t_m_p.mp
 	mft _t_m_p.mp -style=mt1form.mft
-	echo ’\input mt1form.sty’ > $@
+	echo '\input mt1form.sty' > $@
 	test -f piclist.tex && cat piclist.tex >> $@
 	test -f _t_m_p.tex && cat _t_m_p.tex >> $@
-	echo ’\endproof’ >> $@
+	echo '\endproof' >> $@
