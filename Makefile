@@ -1,5 +1,5 @@
 # from https://tug.org/TUGboat/tb28-2/tb89hoeppner.pdf
-METATYPE1 = /workdir/mt1
+METATYPE1 = /mt1
 
 .PHONY: pfb tfm proof all
 
