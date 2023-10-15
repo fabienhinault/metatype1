@@ -7,3 +7,8 @@ curl --output metatype1-ver056.zip  https://ctan.gutenberg-asso.fr/fonts/utiliti
 unzip metatype1-ver056.zip
 
 COPY ./Makefile /mt1
+
+WORKDIR /mt1
+
+# test the image on sample font
+RUN cp ./sample/tapes.mp ./ && make FONT=tapes
