@@ -6,4 +6,4 @@ apt-get install -y gawk && \
 curl --output metatype1-ver056.zip  https://ctan.gutenberg-asso.fr/fonts/utilities/metatype1/metatype1-ver056.zip && \
 unzip metatype1-ver056.zip
 
-COPY ./Makefile /workdir/mt1
+COPY ./Makefile /mt1
