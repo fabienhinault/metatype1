@@ -3,9 +3,11 @@ METATYPE1 = /mt1
 
 .PHONY: pfb tfm proof all
 
-all: pfb tfm
+all: pfa pfb tfm
 
 proof: $(FONT).pdf
+
+pfa: $(FONT).pfa
 
 pfb: $(FONT).pfb
 
@@ -20,6 +22,9 @@ tfm: $(FONT).tfm
 %.pn: %.p
 	gawk -f $(METATYPE1)/packsubr.awk \
 		-vVERBOSE=1 -vLEV=5 -vOUP=$@ $<
+
+%.pfa: %.pn
+	t1asm -a $< $@
 
 %.pfb: %.pn
 	t1asm -b $< $@
